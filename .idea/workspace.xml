@@ -5,6 +5,7 @@
     <ignored path="weixin.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/settings.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368505382711" ignored="false" />
+    <file path="/mod.wsgi" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368517845136" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +31,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autore/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="26" selection-start="56" selection-end="56" vertical-scroll-proportion="0.06884058">
+            <state line="3" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mod.wsgi" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mod.wsgi">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="45" selection-start="86" selection-end="86" vertical-scroll-proportion="0.06884058">
               <folding />
             </state>
           </provider>
@@ -50,6 +69,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/mod.wsgi" />
       </list>
     </option>
   </component>
@@ -278,7 +298,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autore/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="26" selection-start="56" selection-end="56" vertical-scroll-proportion="0.06884058">
+        <state line="3" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mod.wsgi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="45" selection-start="86" selection-end="86" vertical-scroll-proportion="0.06884058">
           <folding />
         </state>
       </provider>
