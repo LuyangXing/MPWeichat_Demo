@@ -34,7 +34,7 @@ def response_msg(req):
         xml = ET.fromstring(req.raw_post_data)
         msgtype = xml.find("MsgType").text
         if msgtype == "text":
-            save_text(req)
+            #save_text(req)
             re_text(req)
 
 
@@ -51,21 +51,24 @@ def save_text(req):
 
 
 def re_text(req):
-    xml = ET.fromstring(req.raw_post_data)
-    content = xml.find("Content").text
-    fromUserName = xml.find("ToUserName").text
-    toUserName = xml.find("FromUserName").text
-    msgtype = xml.find("MsgType").text
-    postTime = str(int(time.time()))
-    reply = """<xml>
-                    <ToUserName><![CDATA[%s]]></ToUserName>
-                    <FromUserName><![CDATA[%s]]></FromUserName>
-                    <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[%s]]></MsgType>
-                    <Content><![CDATA[%s]]></Content>
-                    <FuncFlag>0</FuncFlag>
-                </xml>"""
-    if content == "Hello2BizUser":
-        return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "%s" % xml))
+    if req.raw_post_data:
+        xml = ET.fromstring(req.raw_post_data)
+        content = xml.find("Content").text
+        fromUserName = xml.find("ToUserName").text
+        toUserName = xml.find("FromUserName").text
+        msgtype = xml.find("MsgType").text
+        postTime = str(int(time.time()))
+        reply = """<xml>
+                        <ToUserName><![CDATA[%s]]></ToUserName>
+                        <FromUserName><![CDATA[%s]]></FromUserName>
+                        <CreateTime>%s</CreateTime>
+                        <MsgType><![CDATA[%s]]></MsgType>
+                        <Content><![CDATA[%s]]></Content>
+                        <FuncFlag>0</FuncFlag>
+                    </xml>"""
+        if content == "H2":
+            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "%s" % xml))
+        else:
+            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "Hello!"))
     else:
-        pass
+        return HttpResponse("Invalid Request")

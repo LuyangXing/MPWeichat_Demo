@@ -7,7 +7,7 @@
     <file path="/settings.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368505382711" ignored="false" />
     <file path="/mod.wsgi" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368517845136" ignored="false" />
     <file path="/readme.txt" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368578785516" ignored="false" />
-    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368602597654" ignored="false" />
+    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368603525374" ignored="false" />
     <file path="/urls.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368601051189" ignored="false" />
     <file path="/wxapi.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368598483665" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +29,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="145" selection-end="145" vertical-scroll-proportion="0.16216215">
+            <state line="38" column="0" selection-start="1113" selection-end="1113" vertical-scroll-proportion="-0.10810811">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -429,7 +429,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="145" selection-end="145" vertical-scroll-proportion="0.16216215">
+        <state line="38" column="0" selection-start="1113" selection-end="1113" vertical-scroll-proportion="-0.10810811">
           <folding>
             <element signature="e#41#77#0" expanded="true" />
           </folding>
