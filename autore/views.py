@@ -52,3 +52,84 @@ def response_msg(request):
             return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "Hello!"))
     else:
         return HttpResponse("Invalid Request")
+
+# #  reference
+#
+# receive
+# {event  subscribe(dy)、unsubscribe(qxdy)}
+# <xml><ToUserName><![CDATA[toUser]]></ToUserName>
+# <FromUserName><![CDATA[FromUser]]></FromUserName>
+# <CreateTime>123456789</CreateTime>
+# <MsgType><![CDATA[event]]></MsgType>
+# <Event><![CDATA[EVENT]]></Event>
+# <EventKey><![CDATA[EVENTKEY]]></EventKey>
+# </xml>
+# {text}
+# <xml>
+# <ToUserName><![CDATA[toUser]]></ToUserName>
+# <FromUserName><![CDATA[fromUser]]></FromUserName>
+# <CreateTime>1348831860</CreateTime>
+# <MsgType><![CDATA[text]]></MsgType>
+# <Content><![CDATA[this is a test]]></Content>
+# <MsgId>1234567890123456</MsgId>
+# </xml>
+# {location}
+# <xml>
+# <ToUserName><![CDATA[toUser]]></ToUserName>
+# <FromUserName><![CDATA[fromUser]]></FromUserName>
+# <CreateTime>1351776360</CreateTime>
+# <MsgType><![CDATA[location]]></MsgType>
+# <Location_X>23.134521</Location_X>
+# <Location_Y>113.358803</Location_Y>
+# <Scale>20</Scale>
+# <Label><![CDATA[wzxx]]></Label>
+# <MsgId>1234567890123456</MsgId>
+# </xml>
+#
+# delivery
+# {text}
+# <xml>
+# <ToUserName><![CDATA[toUser]]></ToUserName>
+# <FromUserName><![CDATA[fromUser]]></FromUserName>
+# <CreateTime>12345678</CreateTime>
+# <MsgType><![CDATA[text]]></MsgType>
+# <Content><![CDATA[content]]></Content>
+# <FuncFlag>0</FuncFlag>
+# </xml>
+# {music}
+# <xml>
+# <ToUserName><![CDATA[toUser]]></ToUserName>
+# <FromUserName><![CDATA[fromUser]]></FromUserName>
+# <CreateTime>12345678</CreateTime>
+# <MsgType><![CDATA[music]]></MsgType>
+# <Music>
+# <Title><![CDATA[TITLE]]></Title>
+# <Description><![CDATA[DESCRIPTION]]></Description>
+# <MusicUrl><![CDATA[MUSIC_Url]]></MusicUrl>
+# <HQMusicUrl><![CDATA[HQ_MUSIC_Url]]></HQMusicUrl>
+# </Music>
+# <FuncFlag>0</FuncFlag>
+# </xml>
+# {news}
+# <xml>
+# <ToUserName><![CDATA[toUser]]></ToUserName>
+# <FromUserName><![CDATA[fromUser]]></FromUserName>
+# <CreateTime>12345678</CreateTime>
+# <MsgType><![CDATA[news]]></MsgType>
+# <ArticleCount>2</ArticleCount>
+# <Articles>
+# <item>
+# <Title><![CDATA[title1]]></Title>
+# <Description><![CDATA[description1]]></Description>
+# <PicUrl><![CDATA[picurl]]></PicUrl>
+# <Url><![CDATA[url]]></Url>
+# </item>
+# <item>
+# <Title><![CDATA[title]]></Title>
+# <Description><![CDATA[description]]></Description>
+# <PicUrl><![CDATA[picurl]]></PicUrl>
+# <Url><![CDATA[url]]></Url>
+# </item>
+# </Articles>
+# <FuncFlag>1</FuncFlag>
+# </xml>
