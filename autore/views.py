@@ -30,27 +30,6 @@ def check_signature(request):
 
 
 def response_msg(request):
-#     if request.raw_post_data:
-#         xml = ET.fromstring(request.raw_post_data)
-#         msgtype = xml.find("MsgType").text
-#         if msgtype == "text":
-#             #save_text(req)
-#             re_text(request)
-#
-#
-# def save_text(request):
-#     if request.raw_post_data:
-#         xml = ET.fromstring(request.raw_post_data)
-#         content = xml.find("Content").text
-#         fromUserName = xml.find("ToUserName").text
-#         toUserName = xml.find("FromUserName").text
-#         msgtype = xml.find("MsgType").text
-#         postTime = str(int(time.time()))
-#     else:
-#         return HttpResponse("Invalid Request")
-#
-#
-# def re_text(request):
     if request.raw_post_data:
         xml = ET.fromstring(request.raw_post_data)
         content = xml.find("Content").text
@@ -67,7 +46,8 @@ def response_msg(request):
                         <FuncFlag>0</FuncFlag>
                     </xml>"""
         if content == "H2":
-            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "%s" % xml))
+            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype,
+                                         "%s,%s,%s,%s,%s,%s" % toUserName, fromUserName, postTime, msgtype, content))
         else:
             return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "Hello!"))
     else:
