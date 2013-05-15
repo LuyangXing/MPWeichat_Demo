@@ -46,8 +46,8 @@ def response_msg(request):
                         <FuncFlag>0</FuncFlag>
                     </xml>"""
         if content == "H2":
-            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype,
-                                         "%s,%s,%s,%s,%s,%s" % toUserName, fromUserName, postTime, msgtype, content))
+            test = ("%s,%s,%s,%s,%s,%s" % toUserName, fromUserName, postTime, msgtype, content)
+            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, test))
         else:
             return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "Hello!"))
     else:
