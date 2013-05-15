@@ -17,9 +17,9 @@ def handle_request(request):
         return HttpResponse("Invalid Request")
 
 
-def check_signature(req):
+def check_signature(request):
     token = "wxtoken20130515"
-    params = req.GET
+    params = request.GET
     args = [token, params['timestamp'], params['nonce']]
     args.sort()
     if hashlib.sha1("".join(args)).hexdigest() == params['signature']:
@@ -29,18 +29,18 @@ def check_signature(req):
         return HttpResponse("Invalid Request")
 
 
-def response_msg(req):
-    if req.raw_post_data:
-        xml = ET.fromstring(req.raw_post_data)
+def response_msg(request):
+    if request.raw_post_data:
+        xml = ET.fromstring(request.raw_post_data)
         msgtype = xml.find("MsgType").text
         if msgtype == "text":
             #save_text(req)
-            re_text(req)
+            re_text(request)
 
 
-def save_text(req):
-    if req.raw_post_data:
-        xml = ET.fromstring(req.raw_post_data)
+def save_text(request):
+    if request.raw_post_data:
+        xml = ET.fromstring(request.raw_post_data)
         content = xml.find("Content").text
         fromUserName = xml.find("ToUserName").text
         toUserName = xml.find("FromUserName").text
@@ -50,9 +50,9 @@ def save_text(req):
         return HttpResponse("Invalid Request")
 
 
-def re_text(req):
-    if req.raw_post_data:
-        xml = ET.fromstring(req.raw_post_data)
+def re_text(request):
+    if request.raw_post_data:
+        xml = ET.fromstring(request.raw_post_data)
         content = xml.find("Content").text
         fromUserName = xml.find("ToUserName").text
         toUserName = xml.find("FromUserName").text
