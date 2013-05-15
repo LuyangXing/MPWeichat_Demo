@@ -30,27 +30,27 @@ def check_signature(request):
 
 
 def response_msg(request):
-    if request.raw_post_data:
-        xml = ET.fromstring(request.raw_post_data)
-        msgtype = xml.find("MsgType").text
-        if msgtype == "text":
-            #save_text(req)
-            re_text(request)
-
-
-def save_text(request):
-    if request.raw_post_data:
-        xml = ET.fromstring(request.raw_post_data)
-        content = xml.find("Content").text
-        fromUserName = xml.find("ToUserName").text
-        toUserName = xml.find("FromUserName").text
-        msgtype = xml.find("MsgType").text
-        postTime = str(int(time.time()))
-    else:
-        return HttpResponse("Invalid Request")
-
-
-def re_text(request):
+#     if request.raw_post_data:
+#         xml = ET.fromstring(request.raw_post_data)
+#         msgtype = xml.find("MsgType").text
+#         if msgtype == "text":
+#             #save_text(req)
+#             re_text(request)
+#
+#
+# def save_text(request):
+#     if request.raw_post_data:
+#         xml = ET.fromstring(request.raw_post_data)
+#         content = xml.find("Content").text
+#         fromUserName = xml.find("ToUserName").text
+#         toUserName = xml.find("FromUserName").text
+#         msgtype = xml.find("MsgType").text
+#         postTime = str(int(time.time()))
+#     else:
+#         return HttpResponse("Invalid Request")
+#
+#
+# def re_text(request):
     if request.raw_post_data:
         xml = ET.fromstring(request.raw_post_data)
         content = xml.find("Content").text
