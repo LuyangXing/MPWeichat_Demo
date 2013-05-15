@@ -5,7 +5,7 @@ import hashlib, time, re
 from xml.etree import ElementTree as ET
 
 def autoremsg(request):
-    token = "your token here"
+    token = "wxtoken20130515"
     params = request.GET
     args = [token, params['timestamp'], params['nonce']]
     args.sort()
