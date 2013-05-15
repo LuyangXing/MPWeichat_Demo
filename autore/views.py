@@ -1,7 +1,8 @@
 # Create your views here.
 # coding=utf-8
 from django.http import HttpResponse
-import hashlib, time
+import hashlib
+import time
 from xml.etree import ElementTree as ET
 
 
@@ -31,7 +32,7 @@ def check_signature(req):
 def response_msg(req):
     if req.raw_post_data:
         xml = ET.fromstring(req.raw_post_data)
-        msgtype = xml.find("Type").text
+        msgtype = xml.find("MsgType").text
         if msgtype == "text":
             save_text(req)
             re_text(req)
@@ -43,8 +44,8 @@ def save_text(req):
         content = xml.find("Content").text
         fromUserName = xml.find("ToUserName").text
         toUserName = xml.find("FromUserName").text
+        msgtype = xml.find("MsgType").text
         postTime = str(int(time.time()))
-
     else:
         return HttpResponse("Invalid Request")
 
@@ -54,16 +55,17 @@ def re_text(req):
     content = xml.find("Content").text
     fromUserName = xml.find("ToUserName").text
     toUserName = xml.find("FromUserName").text
+    msgtype = xml.find("MsgType").text
     postTime = str(int(time.time()))
     reply = """<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
                     <FromUserName><![CDATA[%s]]></FromUserName>
                     <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[text]]></MsgType>
+                    <MsgType><![CDATA[%s]]></MsgType>
                     <Content><![CDATA[%s]]></Content>
                     <FuncFlag>0</FuncFlag>
                 </xml>"""
     if content == "Hello2BizUser":
-        return HttpResponse(reply % (toUserName, fromUserName, postTime, "查询成绩,更多功能开发中..."))
+        return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "%s" % xml))
     else:
         pass
