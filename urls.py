@@ -3,7 +3,7 @@ from django.conf.urls.defaults import *
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
-from weixin.autore.views import autoremsg
+from weixin.autore.views import handle_request
 
 urlpatterns = patterns('',
     # Example:
@@ -15,5 +15,5 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/(.*)', admin.site.root),
-    (r'^wx$',autoremsg),
+    (r'^wx$',handle_request),
 )
