@@ -1,0 +1,43 @@
+修改models.py，并在admin中注册：
+        from django.db import models
+        from django.contrib import admin
+
+        class BlogPost(models.Model):
+            title=models.CharField(max_length=150)
+            body=models.TextField()
+            timestamp=models.DateTimeField()
+
+        class BlogPostAdmin(admin.ModelAdmin):
+            list_display=('title','timestamp')
+
+        admin.site.register(BlogPost,BlogPostAdmin)
+
+
+
+修改view.py，编写视图函数，渲染模板：
+        # Create your views here.
+        from django.template import loader, Context
+        from django.http import HttpResponse
+        from mysite.blog.models import BlogPost
+
+        def archive(request):
+            posts=BlogPost.objects.all()
+            t=loader.get_template("archive.html")
+            c=Context({'posts':posts})
+            return HttpResponse(t.render(c))
+
+
+
+template模板
+        在mysite/themes/default/templates/archive.html,使用Django模板块标签，他将模板渲染到序列中的每个元素
+        {% extends "base.html" %}
+        {% block content %}
+        {% for post in posts %}
+        <h2>{{post.title}}</h2>
+        <p>{{post.timestamp|date:"F j, Y"}}</p>
+        <p>{{post.body}}</p>
+        {% endfor %}
+        {% endblock %}
+        在 base.html，html标签加入:
+        {% block content %}
+        {% endblock %}

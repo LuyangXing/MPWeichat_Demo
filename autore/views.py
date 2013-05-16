@@ -53,6 +53,7 @@ def response_msg(request):
     else:
         return HttpResponse("Invalid Request")
 
+
 # #  reference
 #
 # receive
