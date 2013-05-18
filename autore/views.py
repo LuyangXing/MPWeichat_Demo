@@ -43,7 +43,7 @@ def response_msg(request):
         postTime = str(int(time.time()))
 
         data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
-                       cCreateTime=datetime.datetime.now(), cMsgType=msgtype)
+                       cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
         data.save()
         reply = """<xml>
                         <ToUserName><![CDATA[%s]]></ToUserName>
