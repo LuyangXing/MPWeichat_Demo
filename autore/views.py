@@ -40,7 +40,8 @@ def response_msg(request):
         toUserName = xml.find("FromUserName").text
         msgtype = xml.find("MsgType").text
         postTime = str(int(time.time()))
-        data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName, cCreateTimec=postTime, cMsgType = msgtype)
+        
+        data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName, cCreateTime=postTime, cMsgType = msgtype)
         data.save()
         reply = """<xml>
                         <ToUserName><![CDATA[%s]]></ToUserName>
