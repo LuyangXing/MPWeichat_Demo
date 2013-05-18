@@ -84,8 +84,8 @@ class MsgList(models.Model):
 
 
 class MsgListAdmin(admin.ModelAdmin):
-    list_display = ('cToUserName', 'cCreateTime', 'cContent', )
-    search_fields = ('cContent', )
+    list_display = ('cFromUserName', 'cCreateTime', 'cContent', )
+    search_fields = ('cContent', 'cFromUserName', )
     list_filter = ('cCreateTime', )
     ordering = ('-cCreateTime', )
 

@@ -42,9 +42,17 @@ def response_msg(request):
         msgtype = xml.find("MsgType").text
         postTime = str(int(time.time()))
 
-        data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
-                       cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
-        data.save()
+        if msgtype == 'text':
+            data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
+                           cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
+            data.save()
+        elif msgtype == 'event':
+            pass
+        elif msgtype == 'location':
+            pass
+        else:
+            pass
+
         reply = """<xml>
                         <ToUserName><![CDATA[%s]]></ToUserName>
                         <FromUserName><![CDATA[%s]]></FromUserName>

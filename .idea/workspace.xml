@@ -7,7 +7,7 @@
     <file path="/settings.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368505382711" ignored="false" />
     <file path="/mod.wsgi" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368517845136" ignored="false" />
     <file path="/readme.txt" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368578785516" ignored="false" />
-    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368882095643" ignored="false" />
+    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368882999690" ignored="false" />
     <file path="/urls.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368601051189" ignored="false" />
     <file path="/wxapi.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368598483665" ignored="false" />
     <file path="/models.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368848427024" ignored="false" />
@@ -28,19 +28,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autore/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="68" selection-start="3776" selection-end="3776" vertical-scroll-proportion="0.37190083">
+            <state line="87" column="51" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="94" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0">
+            <state line="54" column="0" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -63,8 +63,8 @@
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/autore/wxapi.py" />
         <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/autore/models.py" />
         <option value="$PROJECT_DIR$/ref.txt" />
+        <option value="$PROJECT_DIR$/autore/models.py" />
         <option value="$PROJECT_DIR$/autore/views.py" />
       </list>
     </option>
@@ -480,19 +480,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/views.py">
+    <entry file="file://$PROJECT_DIR$/autore/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="94" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#41#77#0" expanded="true" />
-          </folding>
+        <state line="87" column="51" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/models.py">
+    <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="68" selection-start="3776" selection-end="3776" vertical-scroll-proportion="0.37190083">
-          <folding />
+        <state line="54" column="0" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#41#77#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
