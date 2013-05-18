@@ -5,6 +5,9 @@ import hashlib
 import time
 from xml.etree import ElementTree as ET
 
+from weixin.autore.models import KeywordsList
+from weixin.autore.models import MsgList
+
 
 def handle_request(request):
     if request.method == 'GET':
@@ -37,6 +40,8 @@ def response_msg(request):
         toUserName = xml.find("FromUserName").text
         msgtype = xml.find("MsgType").text
         postTime = str(int(time.time()))
+        data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName, cCreateTimec=postTime, cMsgType = msgtype)
+        data.save()
         reply = """<xml>
                         <ToUserName><![CDATA[%s]]></ToUserName>
                         <FromUserName><![CDATA[%s]]></FromUserName>
