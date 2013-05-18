@@ -3,6 +3,7 @@
 from django.http import HttpResponse
 import hashlib
 import time
+import datetime
 from xml.etree import ElementTree as ET
 
 from weixin.autore.models import KeywordsList
@@ -40,8 +41,9 @@ def response_msg(request):
         toUserName = xml.find("FromUserName").text
         msgtype = xml.find("MsgType").text
         postTime = str(int(time.time()))
-        
-        data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName, cCreateTime=postTime, cMsgType = msgtype)
+
+        data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
+                       cCreateTime=datetime.datetime.now(), cMsgType=msgtype)
         data.save()
         reply = """<xml>
                         <ToUserName><![CDATA[%s]]></ToUserName>

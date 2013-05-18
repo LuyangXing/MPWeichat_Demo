@@ -13,7 +13,6 @@
         admin.site.register(BlogPost,BlogPostAdmin)
 
 
-
 修改view.py，编写视图函数，渲染模板：
         # Create your views here.
         from django.template import loader, Context
@@ -25,7 +24,6 @@
             t=loader.get_template("archive.html")
             c=Context({'posts':posts})
             return HttpResponse(t.render(c))
-
 
 
 template模板
