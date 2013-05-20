@@ -111,7 +111,7 @@ def response_msg(request):
                     if kwlobj.cMsgType == 'text':
                         return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                           kwlobj.cContent))
-                    if kwlobj.cMsgType == 'news':
+                    elif kwlobj.cMsgType == 'news':
                         return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                           kwlobj.cContent))
                         # return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
@@ -120,9 +120,11 @@ def response_msg(request):
                         #                                   kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
                         #                                   kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
                         #                                   kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
-                    if kwlobj.cMsgType == 'music':
+                    elif kwlobj.cMsgType == 'music':
                         return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                            kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
+                    else:
+                        pass
             except KeywordsList.DoesNotExist:
                 pass
 
