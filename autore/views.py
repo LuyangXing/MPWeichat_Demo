@@ -112,7 +112,7 @@ def response_msg(request):
                         return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                           kwlobj.cContent))
                     elif kwlobj.cMsgType == 'news':
-                        return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                        return HttpResponse(reply_text % (toUserName, fromUserName, postTime, 'text',
                                                           kwlobj.cContent))
                         # return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                         #                                   kwlobj.cArticleCount,
