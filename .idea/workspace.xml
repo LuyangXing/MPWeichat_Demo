@@ -10,7 +10,7 @@
     <file path="/settings.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369027062049" ignored="false" />
     <file path="/mod.wsgi" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368517845136" ignored="false" />
     <file path="/readme.txt" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368578785516" ignored="false" />
-    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369041588159" ignored="false" />
+    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369042198396" ignored="false" />
     <file path="/urls.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369028450749" ignored="false" />
     <file path="/wxapi.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368598483665" ignored="false" />
     <file path="/models.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369034731528" ignored="false" />
@@ -34,7 +34,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="126" selection-start="5387" selection-end="5387" vertical-scroll-proportion="0.51811594">
+            <state line="151" column="68" selection-start="7739" selection-end="7739" vertical-scroll-proportion="-0.17028986">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -510,7 +510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="126" selection-start="5387" selection-end="5387" vertical-scroll-proportion="0.51811594">
+        <state line="151" column="68" selection-start="7739" selection-end="7739" vertical-scroll-proportion="-0.17028986">
           <folding>
             <element signature="e#41#77#0" expanded="true" />
           </folding>
