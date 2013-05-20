@@ -129,7 +129,7 @@ def response_msg(request):
             event = xml.find("Event").text
             if event == 'subscribe':
                 try:
-                    kwlobjs = KeywordsList.objects.filter(cEvent='subscribe')
+                    kwlobjs = KeywordsList.objects.filter(cEventType='subscribe')
                     for kwlobj in kwlobjs:
                         if kwlobj.cMsgType == 'text':
                             return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
@@ -149,7 +149,7 @@ def response_msg(request):
                     pass
             elif event == 'unsubscribe':
                 try:
-                    kwlobjs = KeywordsList.objects.filter(cEvent='unsubscribe')
+                    kwlobjs = KeywordsList.objects.filter(cEventType='unsubscribe')
                     for kwlobj in kwlobjs:
                         if kwlobj.cMsgType == 'text':
                             return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
