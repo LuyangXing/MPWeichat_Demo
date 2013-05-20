@@ -51,7 +51,7 @@ def response_msg(request):
                     </xml>"""
 
         reply_news = """<xml>
-                        <ToUserName><![CDATA[%s]></ToUserName>
+                        <ToUserName><![CDATA[%s]]></ToUserName>
                         <FromUserName><![CDATA[%s]]></FromUserName>
                         <CreateTime>%s</CreateTime>
                         <MsgType><![CDATA[%s]]></MsgType>
@@ -95,7 +95,7 @@ def response_msg(request):
                                                           kwlobj.cContent))
                     elif kwlobj.cMsgType == 'news':
                         return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-                                                          kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1))
+                                                          '1', '2', 'http://www.zcool.com.cn/img.html?src=/60/15/1259734790432.jpg', 'http://xyxd.tk'))
                     elif kwlobj.cMsgType == 'music':
                         return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                            kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
