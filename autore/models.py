@@ -12,7 +12,7 @@ class KeywordsList(models.Model):
     cMsgType = models.CharField(max_length=10,  verbose_name=u'消息类型', choices=lMsgType)
 
     lEventType = (('subscribe', u'关注'), ('unsubscribe', u'取消关注'), )
-    cEventType = models.CharField(max_length=10, verbose_name=u'事件类型', blank=True, choices=lEventType)
+    cEventType = models.CharField(max_length=20, verbose_name=u'事件类型', blank=True, choices=lEventType)
 
     cContent = models.TextField(null=True, blank=True, verbose_name=u'文本内容')
 
