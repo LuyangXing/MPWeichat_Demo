@@ -47,7 +47,7 @@ class KeywordsList(models.Model):
 
 
 class KeywordsListAdmin(admin.ModelAdmin):
-    list_display = ('cKeywords', 'cMsgType', )
+    list_display = ('cKeywords', 'cMsgType', 'cContent')
     search_fields = ('cKeywords', )
     list_filter = ('cMsgType',)
     ordering = ('cKeywords', )
@@ -96,8 +96,8 @@ class KeywordsListResource(models.Model):
     lFileClass = ((u'图片', 'Pic'), (u'音频', 'Mp3'),)
     cFileClass = models.CharField(max_length=10, verbose_name=u'类别', choices=lFileClass)
     cFilename = models.CharField(max_length=150, verbose_name=u'文件名')
-    cFile_img = models.ImageField(upload_to='update/%Y/%m/%d', verbose_name=u'图片上传')
-    cFile_mp3 = models.FileField(upload_to='update/%Y/%m/%d', verbose_name=u'音频上传')
+    cFile_img = models.ImageField(upload_to='update/%Y/%m/%d', null=True,  blank=True, verbose_name=u'图片上传')
+    cFile_mp3 = models.FileField(upload_to='update/%Y/%m/%d', null=True,  blank=True, verbose_name=u'音频上传')
     cCreateTime = models.DateTimeField(verbose_name=u'上传时间')
 
     class Meta:

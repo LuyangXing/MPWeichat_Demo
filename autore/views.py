@@ -111,21 +111,24 @@ def response_msg(request):
                 pass
             else:
                 for kwlobj in kwlobjs:
-                    if kwlobj.cMsgType == 'text':
-                        return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-                                                          kwlobj.cContent))
-                    elif kwlobj.cMsgType == 'news':
-                        return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-                                                          kwlobj.cArticleCount,
-                                                          kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
-                                                          kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
-                                                          kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
-                                                          kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
-                    elif kwlobj.cMsgType == 'music':
-                        return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-                                                           kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
-                    else:
-                        return HttpResponse("Invalid Request")
+                    test = "%s, %s, %s" % (kwlobjs, kwlobj.cKeywords, kwlobj.cContent)
+                    return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                      test))
+                    # if kwlobj.cMsgType == 'text':
+                    #     return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                    #                                       kwlobj.cContent))
+                    # elif kwlobj.cMsgType == 'news':
+                    #     return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                    #                                       kwlobj.cArticleCount,
+                    #                                       kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
+                    #                                       kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
+                    #                                       kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
+                    #                                       kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
+                    # elif kwlobj.cMsgType == 'music':
+                    #     return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                    #                                        kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
+                    # else:
+                    #     return HttpResponse("Invalid Request")
 
         elif msgtype == 'event':
             event = xml.find("Event").text
