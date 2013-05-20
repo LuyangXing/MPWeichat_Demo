@@ -31,22 +31,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="113" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0">
+            <state line="126" column="62" selection-start="6181" selection-end="6181" vertical-scroll-proportion="0.75238097">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/autore/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="55" selection-start="3114" selection-end="3114" vertical-scroll-proportion="0.48046875">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -67,15 +58,15 @@
         <option value="$PROJECT_DIR$/ref.txt" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/autore/views.py" />
         <option value="$PROJECT_DIR$/autore/models.py" />
+        <option value="$PROJECT_DIR$/autore/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="345" />
+    <option name="x" value="254" />
     <option name="y" value="3" />
-    <option name="width" value="1017" />
+    <option name="width" value="1108" />
     <option name="height" value="712" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -344,14 +335,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="345" y="3" width="1017" height="712" extended-state="0" />
+    <frame x="254" y="3" width="1108" height="712" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21852237" sideWeight="0.67469877" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19961977" sideWeight="0.67469877" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -498,19 +489,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/views.py">
+    <entry file="file://$PROJECT_DIR$/autore/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="113" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#41#77#0" expanded="true" />
-          </folding>
+        <state line="54" column="67" selection-start="2901" selection-end="2901" vertical-scroll-proportion="0.92578125">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/models.py">
+    <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="55" selection-start="3114" selection-end="3114" vertical-scroll-proportion="0.48046875">
-          <folding />
+        <state line="126" column="62" selection-start="6181" selection-end="6181" vertical-scroll-proportion="0.75238097">
+          <folding>
+            <element signature="e#41#77#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
