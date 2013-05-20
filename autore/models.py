@@ -16,9 +16,9 @@ class KeywordsList(models.Model):
 
     cContent = models.TextField(null=True, blank=True, verbose_name=u'文本内容')
 
-    lArticleCount = ((1,  u'1条'), (2, u'2条'), (3, u'3条'), (4, u'4条'), )
-    cArticleCount = models.IntegerField(max_length=1, null=True,  blank=True, verbose_name=u'图文条数',
-                                        choices=lArticleCount)
+    lArticleCount = (('1',  u'1条'), ('2', u'2条'), ('3', u'3条'), ('4', u'4条'), )
+    cArticleCount = models.CharField(max_length=1,  blank=True, verbose_name=u'图文条数',
+                                     choices=lArticleCount)
     cTitle1 = models.CharField(max_length=50, blank=True, verbose_name=u'图文1标题')
     cDescription1 = models.CharField(max_length=100, blank=True, verbose_name=u'图文1描述')
     cPicUrl1 = models.CharField(max_length=200, blank=True, verbose_name=u'图文1图片')
