@@ -6,8 +6,8 @@ import time
 import datetime
 from xml.etree import ElementTree as ET
 
-from weixin.autore.models import KeywordsList
 from weixin.autore.models import MsgList
+from weixin.autore.models import KeywordsList
 
 
 def handle_request(request):
@@ -36,24 +36,12 @@ def check_signature(request):
 def response_msg(request):
     if request.raw_post_data:
         xml = ET.fromstring(request.raw_post_data)
-        content = xml.find("Content").text
         fromUserName = xml.find("ToUserName").text
         toUserName = xml.find("FromUserName").text
         msgtype = xml.find("MsgType").text
         postTime = str(int(time.time()))
 
-        if msgtype == 'text':
-            data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
-                           cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
-            data.save()
-        elif msgtype == 'event':
-            pass
-        elif msgtype == 'location':
-            pass
-        else:
-            pass
-
-        reply = """<xml>
+        reply_text = """<xml>
                         <ToUserName><![CDATA[%s]]></ToUserName>
                         <FromUserName><![CDATA[%s]]></FromUserName>
                         <CreateTime>%s</CreateTime>
@@ -61,92 +49,143 @@ def response_msg(request):
                         <Content><![CDATA[%s]]></Content>
                         <FuncFlag>0</FuncFlag>
                     </xml>"""
-        if content == "H2":
-            test = "%s,%s,%s,%s,%s" % (toUserName, fromUserName, postTime, msgtype, content)
-            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, test))
+
+        reply_news = """<xml>
+                        <ToUserName><![CDATA[%s]></ToUserName>
+                        <FromUserName><![CDATA[%s]]></FromUserName>
+                        <CreateTime>%s</CreateTime>
+                        <MsgType><![CDATA[%s]]></MsgType>
+                        <ArticleCount>%s</ArticleCount>
+                        <Articles>
+                            <item>
+                                <Title><![CDATA[%s]]></Title>
+                                <Description><![CDATA[%s]]></Description>
+                                <PicUrl><![CDATA[%s]]></PicUrl>
+                                <Url><![CDATA[%s]]></Url>
+                            </item>
+                            <item>
+                                <Title><![CDATA[%s]]></Title>
+                                <Description><![CDATA[%s]]></Description>
+                                <PicUrl><![CDATA[%s]]></PicUrl>
+                                <Url><![CDATA[%s]]></Url>
+                            </item>
+                            <item>
+                                <Title><![CDATA[%s]]></Title>
+                                <Description><![CDATA[%s]]></Description>
+                                <PicUrl><![CDATA[%s]]></PicUrl>
+                                <Url><![CDATA[%s]]></Url>
+                            </item>
+                            <item>
+                                <Title><![CDATA[%s]]></Title>
+                                <Description><![CDATA[%s]]></Description>
+                                <PicUrl><![CDATA[%s]]></PicUrl>
+                                <Url><![CDATA[%s]]></Url>
+                            </item>
+                        </Articles>
+                        <FuncFlag>1</FuncFlag>
+                    </xml>"""
+
+        reply_music = """<xml>
+                        <ToUserName><![CDATA[%s]]></ToUserName>
+                        <FromUserName><![CDATA[%s]]></FromUserName>
+                        <CreateTime>%s</CreateTime>
+                        <MsgType><![CDATA[%s]]></MsgType>
+                        <Music>
+                            <Title><![CDATA[%s]]></Title>
+                            <Description><![CDATA[%s]]></Description>
+                            <MusicUrl><![CDATA[%s]]></MusicUrl>
+                            <HQMusicUrl><![CDATA[%s]]></HQMusicUrl>
+                        </Music>
+                        <FuncFlag>0</FuncFlag>
+                    </xml>"""
+
+        if msgtype == 'text':
+            content = xml.find("Content").text
+            data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
+                           cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
+            data.save()
+
+            try:
+                kwlobjs = KeywordsList.objects.filter(cKeywords=content)
+            except KeywordsList.DoesNotExist:
+                pass
+            else:
+                for kwlobj in kwlobjs:
+                    if kwlobj.cMsgType == 'text':
+                        return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                          kwlobj.cContent))
+                    elif kwlobj.cMsgType == 'news':
+                        return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                          kwlobj.cArticleCount,
+                                                          kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
+                                                          kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
+                                                          kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
+                                                          kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
+                    elif kwlobj.cMsgType == 'music':
+                        return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                           kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
+                    else:
+                        return HttpResponse("Invalid Request")
+
+        elif msgtype == 'event':
+            event = xml.find("Event").text
+            if event == 'subscribe':
+                try:
+                    kwlobjs = KeywordsList.objects.filter(cEvent='subscribe')
+                except KeywordsList.DoesNotExist:
+                    pass
+                else:
+                    for kwlobj in kwlobjs:
+                        if kwlobj.cMsgType == 'text':
+                            return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                              kwlobj.cContent))
+                        elif kwlobj.cMsgType == 'news':
+                            return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                              kwlobj.cArticleCount,
+                                                              kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
+                                                              kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
+                                                              kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
+                                                              kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
+                        elif kwlobj.cMsgType == 'music':
+                            return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                               kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
+                        else:
+                            return HttpResponse("Invalid Request")
+            elif event == 'unsubscribe':
+                try:
+                    kwlobjs = KeywordsList.objects.filter(cEvent='unsubscribe')
+                except KeywordsList.DoesNotExist:
+                    pass
+                else:
+                    for kwlobj in kwlobjs:
+                        if kwlobj.cMsgType == 'text':
+                            return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                              kwlobj.cContent))
+                        elif kwlobj.cMsgType == 'news':
+                            return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                              kwlobj.cArticleCount,
+                                                              kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
+                                                              kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
+                                                              kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
+                                                              kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
+                        elif kwlobj.cMsgType == 'music':
+                            return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                               kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
+                        else:
+                            return HttpResponse("Invalid Request")
+            else:
+                return HttpResponse("Invalid Request")
+
+        # elif msgtype == 'location':
+        #     data = MsgList(cToUserName=toUserName, cFromUserName=fromUserName,
+        #                    cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
+        #     data.save()
+
         else:
-            return HttpResponse(reply % (toUserName, fromUserName, postTime, msgtype, "Hello!"))
+            return HttpResponse("Invalid Request")
+
     else:
         return HttpResponse("Invalid Request")
 
 
 # #  reference
-#
-# receive
-# {event  subscribe(dy)、unsubscribe(qxdy)}
-# <xml><ToUserName><![CDATA[toUser]]></ToUserName>
-# <FromUserName><![CDATA[FromUser]]></FromUserName>
-# <CreateTime>123456789</CreateTime>
-# <MsgType><![CDATA[event]]></MsgType>
-# <Event><![CDATA[EVENT]]></Event>
-# <EventKey><![CDATA[EVENTKEY]]></EventKey>
-# </xml>
-# {text}
-# <xml>
-# <ToUserName><![CDATA[toUser]]></ToUserName>
-# <FromUserName><![CDATA[fromUser]]></FromUserName>
-# <CreateTime>1348831860</CreateTime>
-# <MsgType><![CDATA[text]]></MsgType>
-# <Content><![CDATA[this is a test]]></Content>
-# <MsgId>1234567890123456</MsgId>
-# </xml>
-# {location}
-# <xml>
-# <ToUserName><![CDATA[toUser]]></ToUserName>
-# <FromUserName><![CDATA[fromUser]]></FromUserName>
-# <CreateTime>1351776360</CreateTime>
-# <MsgType><![CDATA[location]]></MsgType>
-# <Location_X>23.134521</Location_X>
-# <Location_Y>113.358803</Location_Y>
-# <Scale>20</Scale>
-# <Label><![CDATA[wzxx]]></Label>
-# <MsgId>1234567890123456</MsgId>
-# </xml>
-#
-# delivery
-# {text}
-# <xml>
-# <ToUserName><![CDATA[toUser]]></ToUserName>
-# <FromUserName><![CDATA[fromUser]]></FromUserName>
-# <CreateTime>12345678</CreateTime>
-# <MsgType><![CDATA[text]]></MsgType>
-# <Content><![CDATA[content]]></Content>
-# <FuncFlag>0</FuncFlag>
-# </xml>
-# {music}
-# <xml>
-# <ToUserName><![CDATA[toUser]]></ToUserName>
-# <FromUserName><![CDATA[fromUser]]></FromUserName>
-# <CreateTime>12345678</CreateTime>
-# <MsgType><![CDATA[music]]></MsgType>
-# <Music>
-# <Title><![CDATA[TITLE]]></Title>
-# <Description><![CDATA[DESCRIPTION]]></Description>
-# <MusicUrl><![CDATA[MUSIC_Url]]></MusicUrl>
-# <HQMusicUrl><![CDATA[HQ_MUSIC_Url]]></HQMusicUrl>
-# </Music>
-# <FuncFlag>0</FuncFlag>
-# </xml>
-# {news}
-# <xml>
-# <ToUserName><![CDATA[toUser]]></ToUserName>
-# <FromUserName><![CDATA[fromUser]]></FromUserName>
-# <CreateTime>12345678</CreateTime>
-# <MsgType><![CDATA[news]]></MsgType>
-# <ArticleCount>2</ArticleCount>
-# <Articles>
-# <item>
-# <Title><![CDATA[title1]]></Title>
-# <Description><![CDATA[description1]]></Description>
-# <PicUrl><![CDATA[picurl]]></PicUrl>
-# <Url><![CDATA[url]]></Url>
-# </item>
-# <item>
-# <Title><![CDATA[title]]></Title>
-# <Description><![CDATA[description]]></Description>
-# <PicUrl><![CDATA[picurl]]></PicUrl>
-# <Url><![CDATA[url]]></Url>
-# </item>
-# </Articles>
-# <FuncFlag>1</FuncFlag>
-# </xml>
