@@ -31,22 +31,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="34" selection-start="5316" selection-end="5316" vertical-scroll-proportion="0.0">
+            <state line="115" column="75" selection-start="5057" selection-end="5057" vertical-scroll-proportion="0.3442029">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/autore/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="15" selection-start="5306" selection-end="5306" vertical-scroll-proportion="3.5108695">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -496,19 +487,19 @@
         <state line="45" column="17" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.47107437" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/views.py">
+    <entry file="file://$PROJECT_DIR$/autore/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="34" selection-start="5316" selection-end="5316" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#41#77#0" expanded="true" />
-          </folding>
+        <state line="3" column="26" selection-start="71" selection-end="71" vertical-scroll-proportion="0.10326087">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/models.py">
+    <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="15" selection-start="5306" selection-end="5306" vertical-scroll-proportion="3.5108695">
-          <folding />
+        <state line="115" column="75" selection-start="5057" selection-end="5057" vertical-scroll-proportion="0.3442029">
+          <folding>
+            <element signature="e#41#77#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

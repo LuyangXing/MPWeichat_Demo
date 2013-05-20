@@ -111,43 +111,18 @@ def response_msg(request):
                     if kwlobj.cMsgType == 'text':
                         return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                           kwlobj.cContent))
-                    elif kwlobj.cMsgType == 'news':
-                        return HttpResponse("""<xml>
-                            <ToUserName><![CDATA[%s]></ToUserName>
-                            <FromUserName><![CDATA[%s]]></FromUserName>
-                            <CreateTime>%s</CreateTime>
-                            <MsgType><![CDATA[%s]]></MsgType>
-                            <ArticleCount>%s</ArticleCount>
-                            <Articles>
-                            <item>
-                            <Title><![CDATA[%s]]></Title>
-                            <Description><![CDATA[%s]]></Description>
-                            <PicUrl><![CDATA[%s]]></PicUrl>
-                            <Url><![CDATA[%s]]></Url>
-                            </item>
-                            <item>
-                            <Title><![CDATA[%s]]></Title>
-                            <Description><![CDATA[%s]]></Description>
-                            <PicUrl><![CDATA[%s]]></PicUrl>
-                            <Url><![CDATA[%s]]></Url>
-                            </item>
-                            </Articles>
-                            <FuncFlag>1</FuncFlag>
-                            </xml>"""
-                            % (toUserName, fromUserName, postTime, 'news',4,
-                            'kwlobj.cTitle1', 'kwlobj.cDescription1', 'http://dwz.cn/8g4X3', 'http://baidu.com',
-                            'kwlobj.cTitle2', 'kwlobj.cDescription2', 'http://dwz.cn/8g4X3', 'http://baidu.com'))
+                    if kwlobj.cMsgType == 'news':
+                        return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                          kwlobj.cContent))
                         # return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                         #                                   kwlobj.cArticleCount,
                         #                                   kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
                         #                                   kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
                         #                                   kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
                         #                                   kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
-                    elif kwlobj.cMsgType == 'music':
+                    if kwlobj.cMsgType == 'music':
                         return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
                                                            kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
-                    else:
-                        return HttpResponse("Invalid Request")
             except KeywordsList.DoesNotExist:
                 pass
 
