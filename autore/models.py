@@ -53,7 +53,7 @@ class KeywordsListAdmin(admin.ModelAdmin):
     ordering = ('cKeywords', )
 
     #fields = ('title', 'authors', 'publisher', 'publication_date')
-    fieldsets = [(None, {'fields': ['cKeywords', 'cMsgType']}),
+    fieldsets = [(None, {'fields': ['cKeywords', 'cMsgType', 'cEventType']}),
                  (u'文本内容', {'fields': ['cContent'], 'classes': ['collapse']}),
                  (u'图文内容', {'fields': ['cArticleCount',
                                 'cTitle1', 'cDescription1', 'cPicUrl1', 'cUrl1',
