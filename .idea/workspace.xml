@@ -13,7 +13,7 @@
     <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369032287875" ignored="false" />
     <file path="/urls.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369028450749" ignored="false" />
     <file path="/wxapi.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368598483665" ignored="false" />
-    <file path="/models.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369029612906" ignored="false" />
+    <file path="/models.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369033852503" ignored="false" />
     <file path="/start_script.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368775973865" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +45,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="62" selection-start="706" selection-end="706" vertical-scroll-proportion="0.48046875">
+            <state line="14" column="68" selection-start="534" selection-end="534" vertical-scroll-proportion="0.51953125">
               <folding />
             </state>
           </provider>
@@ -509,7 +509,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autore/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="62" selection-start="706" selection-end="706" vertical-scroll-proportion="0.48046875">
+        <state line="14" column="68" selection-start="534" selection-end="534" vertical-scroll-proportion="0.51953125">
           <folding />
         </state>
       </provider>
