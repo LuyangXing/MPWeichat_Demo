@@ -10,7 +10,7 @@
     <file path="/settings.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369027062049" ignored="false" />
     <file path="/mod.wsgi" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368517845136" ignored="false" />
     <file path="/readme.txt" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368578785516" ignored="false" />
-    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369040238976" ignored="false" />
+    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369040709846" ignored="false" />
     <file path="/urls.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369028450749" ignored="false" />
     <file path="/wxapi.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368598483665" ignored="false" />
     <file path="/models.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369034731528" ignored="false" />
@@ -34,7 +34,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="25" selection-start="4448" selection-end="4448" vertical-scroll-proportion="0.67753625">
+            <state line="97" column="130" selection-start="4126" selection-end="4126" vertical-scroll-proportion="0.3413729">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -127,6 +127,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="weixin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weixin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weixin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -496,7 +510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="25" selection-start="4448" selection-end="4448" vertical-scroll-proportion="0.67753625">
+        <state line="97" column="130" selection-start="4126" selection-end="4126" vertical-scroll-proportion="0.3413729">
           <folding>
             <element signature="e#41#77#0" expanded="true" />
           </folding>
