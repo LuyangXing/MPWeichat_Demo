@@ -8,10 +8,10 @@ from django.contrib import admin
 class KeywordsList(models.Model):
     cKeywords = models.CharField(max_length=20,  verbose_name=u'自动回复关键词')
 
-    lMsgType = ((u'文本内容',  'text'), (u'图文内容',  'news'), (u'音乐内容', 'music'), )
+    lMsgType = (('text',  u'文本内容'), ('news',  u'图文内容'), ('music', u'音乐内容'), )
     cMsgType = models.CharField(max_length=10,  verbose_name=u'消息类型', choices=lMsgType)
 
-    lEventType = ((u'关注', 'subscribe'), (u'取消关注', 'unsubscribe'), )
+    lEventType = (('subscribe', u'关注'), ('unsubscribe', u'取消关注'), )
     cEventType = models.CharField(max_length=10, verbose_name=u'', blank=True, choices=lEventType)
 
     cContent = models.TextField(null=True, blank=True, verbose_name=u'文本内容')
@@ -93,7 +93,7 @@ class MsgListAdmin(admin.ModelAdmin):
 
 
 class KeywordsListResource(models.Model):
-    lFileClass = ((u'图片', 'Pic'), (u'音频', 'Mp3'),)
+    lFileClass = (('Pic', u'图片'), ('Mp3', u'音频'),)
     cFileClass = models.CharField(max_length=10, verbose_name=u'类别', choices=lFileClass)
     cFilename = models.CharField(max_length=150, verbose_name=u'文件名')
     cFile_img = models.ImageField(upload_to='update/%Y/%m/%d', null=True,  blank=True, verbose_name=u'图片上传')

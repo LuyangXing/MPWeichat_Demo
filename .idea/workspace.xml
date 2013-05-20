@@ -31,10 +31,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="113" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.33273703">
+            <state line="109" column="113" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -42,10 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="54" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0">
+            <state line="103" column="29" selection-start="5329" selection-end="5329" vertical-scroll-proportion="0.35420394">
               <folding />
             </state>
           </provider>
@@ -67,8 +67,8 @@
         <option value="$PROJECT_DIR$/ref.txt" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/autore/models.py" />
         <option value="$PROJECT_DIR$/autore/views.py" />
+        <option value="$PROJECT_DIR$/autore/models.py" />
       </list>
     </option>
   </component>
@@ -498,19 +498,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autore/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="54" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="113" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.33273703">
+        <state line="109" column="113" selection-start="4658" selection-end="4658" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#41#77#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autore/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="29" selection-start="5329" selection-end="5329" vertical-scroll-proportion="0.35420394">
+          <folding />
         </state>
       </provider>
     </entry>
