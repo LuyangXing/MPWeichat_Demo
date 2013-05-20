@@ -10,7 +10,7 @@
     <file path="/settings.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369027062049" ignored="false" />
     <file path="/mod.wsgi" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368517845136" ignored="false" />
     <file path="/readme.txt" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368578785516" ignored="false" />
-    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369030893163" ignored="false" />
+    <file path="/views.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369031162719" ignored="false" />
     <file path="/urls.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369028450749" ignored="false" />
     <file path="/wxapi.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1368598483665" ignored="false" />
     <file path="/models.py" changelist="b215e683-d529-4848-9dd5-6cb188705df9" time="1369029612906" ignored="false" />
@@ -34,7 +34,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="97" selection-start="4621" selection-end="4621" vertical-scroll-proportion="0.26449275">
+            <state line="109" column="94" selection-start="4690" selection-end="4690" vertical-scroll-proportion="0.29891303">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -507,7 +507,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autore/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="97" selection-start="4621" selection-end="4621" vertical-scroll-proportion="0.26449275">
+        <state line="109" column="94" selection-start="4690" selection-end="4690" vertical-scroll-proportion="0.29891303">
           <folding>
             <element signature="e#41#77#0" expanded="true" />
           </folding>

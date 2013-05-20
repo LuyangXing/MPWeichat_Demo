@@ -106,7 +106,8 @@ def response_msg(request):
             data.save()
 
             kwlobjs = KeywordsList.objects.filter(cKeywords=content)
-            return HttpResponse(reply_text % (toUserName, fromUserName, postTime, 'text', kwlobjs))
+            test = "%s,%s" %(kwlobjs[0].cKeywords, kwlobjs[0].cContent)
+            return HttpResponse(reply_text % (toUserName, fromUserName, postTime, 'text', test))
             # try:
             #     kwlobjs = KeywordsList.objects.filter(cKeywords=content)
             # except KeywordsList.DoesNotExist:
