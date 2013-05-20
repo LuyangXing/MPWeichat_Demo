@@ -105,39 +105,32 @@ def response_msg(request):
                            cCreateTime=datetime.datetime.now(), cMsgType=msgtype, cContent=content)
             data.save()
 
-            kwlobjs = KeywordsList.objects.filter(cKeywords=content)
-            test = "%s,%s" %(kwlobjs[0].cKeywords, kwlobjs[0].cContent)
-            return HttpResponse(reply_text % (toUserName, fromUserName, postTime, 'text', test))
-            # try:
-            #     kwlobjs = KeywordsList.objects.filter(cKeywords=content)
-            # except KeywordsList.DoesNotExist:
-            #     pass
-            # else:
-            #     for kwlobj in kwlobjs:
-            #         if kwlobj.cMsgType == 'text':
-            #             return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-            #                                               kwlobj.cContent))
-            #         elif kwlobj.cMsgType == 'news':
-            #             return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-            #                                               kwlobj.cArticleCount,
-            #                                               kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
-            #                                               kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
-            #                                               kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
-            #                                               kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
-            #         elif kwlobj.cMsgType == 'music':
-            #             return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
-            #                                                kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
-            #         else:
-            #             return HttpResponse("Invalid Request")
+            try:
+                kwlobjs = KeywordsList.objects.filter(cKeywords=content)
+                for kwlobj in kwlobjs:
+                    if kwlobj.cMsgType == 'text':
+                        return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                          kwlobj.cContent))
+                    elif kwlobj.cMsgType == 'news':
+                        return HttpResponse(reply_news % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                          kwlobj.cArticleCount,
+                                                          kwlobj.cTitle1, kwlobj.cDescription1, kwlobj.cPicUrl1, kwlobj.cUrl1,
+                                                          kwlobj.cTitle2, kwlobj.cDescription2, kwlobj.cPicUrl2, kwlobj.cUrl2,
+                                                          kwlobj.cTitle3, kwlobj.cDescription3, kwlobj.cPicUrl3, kwlobj.cUrl3,
+                                                          kwlobj.cTitle4, kwlobj.cDescription4, kwlobj.cPicUrl4, kwlobj.cUrl4))
+                    elif kwlobj.cMsgType == 'music':
+                        return HttpResponse(reply_music % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
+                                                           kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
+                    else:
+                        return HttpResponse("Invalid Request")
+            except KeywordsList.DoesNotExist:
+                pass
 
         elif msgtype == 'event':
             event = xml.find("Event").text
             if event == 'subscribe':
                 try:
                     kwlobjs = KeywordsList.objects.filter(cEvent='subscribe')
-                except KeywordsList.DoesNotExist:
-                    pass
-                else:
                     for kwlobj in kwlobjs:
                         if kwlobj.cMsgType == 'text':
                             return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
@@ -154,13 +147,12 @@ def response_msg(request):
                                                                kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
                         else:
                             return HttpResponse("Invalid Request")
+                except KeywordsList.DoesNotExist:
+                        pass
 
             elif event == 'unsubscribe':
                 try:
                     kwlobjs = KeywordsList.objects.filter(cEvent='unsubscribe')
-                except KeywordsList.DoesNotExist:
-                    pass
-                else:
                     for kwlobj in kwlobjs:
                         if kwlobj.cMsgType == 'text':
                             return HttpResponse(reply_text % (toUserName, fromUserName, postTime, kwlobj.cMsgType,
@@ -177,6 +169,8 @@ def response_msg(request):
                                                                kwlobj.cTitle, kwlobj.cDescription, kwlobj.cMusicUrl, kwlobj.cHQMusicUrl))
                         else:
                             return HttpResponse("Invalid Request")
+                except KeywordsList.DoesNotExist:
+                    pass
 
             else:
                 return HttpResponse("Invalid Request")
