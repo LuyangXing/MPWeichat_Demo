@@ -23,3 +23,5 @@ Alias /admin_media "C:\Server\Django-1.0.4\django\contrib\admin\media"
 <LocationMatch "\.(jpg|gif|png|txt|ico|pdf|css|jpeg)$">
     SetHandler None
 </LocationMatch>
+
+#解析目录用的Apache配置文件部分 与 weixin.wsgi 配合使用

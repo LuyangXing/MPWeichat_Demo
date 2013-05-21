@@ -1,5 +1,5 @@
 # Django settings for weixin project.
-
+# coding=utf-8
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -22,10 +22,12 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
 TIME_ZONE = 'Asia/Shanghai'
+#配置时区
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'zh-CN'
+#汉化后台界面
 
 SITE_ID = 1
 
@@ -37,15 +39,18 @@ USE_I18N = True
 # Example: "/home/media/media.lawrence.com/"
 import os
 MEDIA_ROOT = os.path.join(os.getcwd(), 'media') + '/'
+#配置静态文件解析主文件夹,与上传目录\样式文件等有关系
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
+#对外解析目录
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/admin_media/'
+#解析Admin目录静态文件路径,拷贝文件参考下图
 # copy C:\Server\Django-1.0.4\django\contrib\admin\media to weixin/admin_media/
 
 # Make this unique, and don't share it with anybody.
@@ -75,4 +80,16 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'weixin.autore',
+    #注册主应用信息
+    'tinymce',
+    #注册tinymce插件信息
 )
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': "advanced",
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_toolbar_align': "left",
+    'width': 600,
+    'height': 400,
+}
+#注册tinymce自定义界面信息
