@@ -1,5 +1,8 @@
 # Django settings for weixin project.
 # coding=utf-8
+import os
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -37,7 +40,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = 'C:\\Server\\Apache2.2\\htdocs\\weixin\\media\\'
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media').replace('\\', '/')
 #配置静态文件解析主文件夹,与上传目录\样式文件等有关系
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -70,7 +73,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'weixin.urls'
 
-import os
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),)
 
 INSTALLED_APPS = (
