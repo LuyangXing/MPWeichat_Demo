@@ -70,6 +70,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'weixin.urls'
 
+import os
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),)
 
 INSTALLED_APPS = (

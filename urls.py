@@ -28,5 +28,5 @@ urlpatterns = patterns('',
     #解析上传的静态图片文件
     (r'^news/$', news_list), #调用路径解析新闻模块
     (r'^tinymce/', include('tinymce.urls')), #调用tinymce富文本模块
-    #安装参考 django-tinymce 项目，按帮助操作，根据提示信息需要把tiny_mce模块拷贝到media目录下的js目录下，可以参考404信息
+    #安装参考 django-tinymce 项目，根据提示信息需要把tiny_mce模块拷贝到media目录下的js目录下，可以参考404信息
     )
