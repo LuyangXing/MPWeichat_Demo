@@ -37,8 +37,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-import os
-MEDIA_ROOT = os.path.join(os.getcwd(), 'media') + '/'
+MEDIA_ROOT = 'C:\\Server\\Apache2.2\\htdocs\\weixin\\media\\'
 #配置静态文件解析主文件夹,与上传目录\样式文件等有关系
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -49,7 +48,7 @@ MEDIA_URL = '/media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/admin_media/'
+ADMIN_MEDIA_PREFIX = '/media/admin_media/'
 #解析Admin目录静态文件路径,拷贝文件参考下图
 # copy C:\Server\Django-1.0.4\django\contrib\admin\media to weixin/admin_media/
 
